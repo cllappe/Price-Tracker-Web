@@ -8,12 +8,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "npm run lint:prettier && npm run lint:eslint",
-    "lint:prettier": "prettier --write \"src/**/*.{css,astro}\"",
-    "lint:eslint": "eslint \"src/**/*.{css,js}\""
+    "lint:prettier": "prettier --write \"src/**/*.{css,astro}\""
   },
   "devDependencies": {
     "astro": "^1.0.0",
-    "eslint": "^8.18.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.12.0"
   },
