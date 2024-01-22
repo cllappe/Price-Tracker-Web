@@ -2,6 +2,7 @@
   "name": "@example/basics",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -11,12 +12,19 @@
     "lint:prettier": "prettier --write \"src/**/*.{css,astro}\""
   },
   "devDependencies": {
-    "astro": "^1.0.0",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.12.0"
   },
   "dependencies": {
+    "@astrojs/netlify": "^4.1.1",
+    "@astrojs/svelte": "^5.0.3",
     "@netlify/planetscale": "^1.1.0",
-    "@planetscale/database": "^1.14.0"
+    "@planetscale/database": "^1.14.0",
+    "@smui/chips": "^7.0.0-beta.16",
+    "@smui/data-table": "^7.0.0-beta.16",
+    "nanostores": "^0.9.5",
+    "svelte": "^4.2.9",
+    "svelte-material-ui": "^7.0.0-beta.16",
+    "svelte-preprocess": "^5.1.3"
   }
 }
