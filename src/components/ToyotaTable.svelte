@@ -1,42 +1,49 @@
 <script lang="ts">
-    import DataTable, {Head, Body, Row, Cell } from '@smui/data-table';
     import type {Toyota} from '../types/toyota';
-    import {hiddenCategoriesToyota} from '../state';
+    import Grid from 'gridjs-svelte';
 
     export let toyotas: Toyota[];
+    let columns = [
+        'Model', 
+        'Year', 
+        'Base MSRP', 
+        'Total MSRP', 
+        'Selling Price', 
+        'Advertised Price', 
+        'Options', 
+        'Interior Color', 
+        'External Color', 
+        'Dealer', 
+        'First Saw Date'
+    ];
+    let data = toyotas.map((toyota) => {
+        return [
+            toyota.model, 
+            toyota.year, 
+            toyota.baseMsrp, 
+            toyota.totalMsrp, 
+            toyota.sellingPrice, 
+            toyota.advertizedPrice, 
+            toyota.options, 
+            toyota.intColor_nvsName, 
+            toyota.extColor_nvsName, 
+            toyota.dealer, 
+            toyota.addedDate];
+    });
 </script>
 
-<DataTable style="width: 100%">
-    <Head>
-        <Row>
-            <Cell>Model</Cell>
-            <Cell>Year</Cell>
-            <Cell>Base MSRP</Cell>
-            <Cell>Total MSRP</Cell>
-            <Cell>Selling Price</Cell>
-            <Cell>Advertised Price</Cell>
-            <Cell>Options</Cell>
-            <Cell>Interior Color</Cell>
-            <Cell>External Color</Cell>
-            <Cell>Dealer</Cell>
-            <Cell>First Saw Date</Cell>
-        </Row>
-    </Head>
-    <Body>
-        {#each toyotas.filter((ty) => !$hiddenCategoriesToyota.includes(ty.model)) as toyota}
-            <Row>
-                <Cell>{toyota.model}</Cell>
-                <Cell>{toyota.year}</Cell>
-                <Cell>${toyota.baseMsrp}</Cell>
-                <Cell>${toyota.totalMsrp}</Cell>
-                <Cell>${toyota.sellingPrice}</Cell>
-                <Cell>${toyota.advertizedPrice}</Cell>
-                <Cell>{toyota.options}</Cell>
-                <Cell>{toyota.intColor_nvsName}</Cell>
-                <Cell>{toyota.extColor_nvsName}</Cell>
-                <Cell>{toyota.dealer}</Cell>
-                <Cell>{toyota.addedDate}</Cell>
-            </Row>
-        {/each}
-    </Body>
-</DataTable>
+<Grid
+columns={columns}
+data={data}
+sort
+search
+pagination={{enabled: true, limit: 10}} 
+fixedHeader={{enabled: true}}
+resizable={{enabled: true}}
+/>
+
+<style>
+    @import "https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css";
+</style>
+
+

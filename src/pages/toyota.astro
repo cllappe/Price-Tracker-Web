@@ -1,11 +1,7 @@
 ---
 import Layout from '../components/Layout.astro';
 import ToyotaTable from '../components/ToyotaTable.svelte';
-import ToyotaCatagoryTags from '../components/ToyotaCatagoryTags.svelte';
-
 import type { Toyota } from '../types/toyota';
-
-console.log(process.env.URL);
 
 const response = await fetch(process.env.URL+'/.netlify/functions/getToyotaCars', {
     method: 'GET',
@@ -15,10 +11,13 @@ const response = await fetch(process.env.URL+'/.netlify/functions/getToyotaCars'
 });
 const json = await response.json();
 const toyotas: Toyota[] = json.rows;
+
+
 ---
 
 <Layout title = "Chelsea's Dashboard">
-    <h3>Chelsea's Dashboard</h3>
-    <ToyotaCatagoryTags toyotas={toyotas} client:load/>
-    <ToyotaTable toyotas={toyotas} client:load />
+    <h3> Chelsea's Dashboard</h3>
+    <div>
+        <ToyotaTable toyotas={toyotas} client:load/>
+    </div>
 </Layout>

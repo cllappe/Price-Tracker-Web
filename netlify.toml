@@ -1,4 +1,7 @@
 # example netlify.toml
+[dev]
+  targetPort = 4321
+  port = 8888
 [build]
   command = "astro build"
   functions = "netlify/functions"

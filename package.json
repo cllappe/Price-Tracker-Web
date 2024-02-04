@@ -22,6 +22,8 @@
     "@planetscale/database": "^1.14.0",
     "@smui/chips": "^7.0.0-beta.16",
     "@smui/data-table": "^7.0.0-beta.16",
+    "gridjs": "^6.1.1",
+    "gridjs-svelte": "^2.1.1",
     "nanostores": "^0.9.5",
     "svelte": "^4.2.9",
     "svelte-material-ui": "^7.0.0-beta.16",

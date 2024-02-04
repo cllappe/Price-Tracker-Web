@@ -1,0 +1,21 @@
+---
+import Layout from '../components/Layout.astro';
+import CadillacTable from '../components/CadillacTable.svelte';
+import type { Cadillac } from '../types/cadillac';
+
+const response = await fetch (process.env.URL+'/.netlify/functions/getCadillacCars', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+});
+const json = await response.json();
+const cadillacs: Cadillac[] = json.rows;
+---
+
+<Layout title = "Acacia's Dashboard">
+    <h3>Acacia's Dashboard</h3>
+    <div>
+        <CadillacTable cadillacs={cadillacs} client:load /> 
+    </div>
+</Layout>

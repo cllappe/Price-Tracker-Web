@@ -10,6 +10,11 @@ const { title } = Astro.props as Props;
 
 <!DOCTYPE html>
 <html lang="en">
+  <div class="topnav">
+    <a href="/">Home</a>
+    <a href="/toyota">Chelsea's Dashboard</a>
+    <a href="/cadillac">Acacia's Dashboard</a>
+  </div>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -41,6 +46,34 @@ const { title } = Astro.props as Props;
   body {
     margin: 0;
   }
+
+  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 
   :global(h1) {
     font-size: var(--font-size-xl);
