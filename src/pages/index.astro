@@ -1,42 +1,25 @@
 ---
 import Layout from '../components/Layout.astro';
-import FeedbackForm from '../components/FeedbackForm.astro';
 ---
 
-<Layout title="Astro Toolbox">
+<Layout title="Car Price Tracker">
   <main>
-    <div class="header">
-      <div class="logo">
-        <img
-          src="https://user-images.githubusercontent.com/43764894/223557634-f62606c5-bdf9-476c-9264-0d3728189962.png"
-        />
-      </div>
+    <div>
+      <p> This is site built in order to track local car information. </p>
+      <p> Data is collected using a java based program and stored in a database. </p>
+      <p> The data is then displayed on this site. </p>
     </div>
-    <div class="intro">
-      <p>
-        Hi 👋! This template gives you an
-        <a href="https://astro.build/">Astro</a> app with the scaffolding for
-        <a href="https://ntl.fyi/3upc4Qo"
-          >Netlify Functions</a
-        >, <a href="https://ntl.fyi/3bICRk6">Forms</a>, and
-      <a href="https://ntl.fyi/3PcY8RH">Redirects</a>. Our
-      aim was to give you the code you would need to hit the ground running
-      with a few fun features.
-    </p>
 
-    <p>
-      You can find the code for this project on GitHub at
-      <a href="https://github.com/netlify-templates/astro-toolbox"
-        >https://github.com/netlify-templates/astro-toolbox</a
-      >! Happy coding!
-    </p>
-    </div>
-    <FeedbackForm />
-    <a class="jokes-link" href="/api/joke">
-    <h3>
-      Click here for function-loaded jokes!
-    </h3>
-    </a>
+    <div>
+      <h2> Current Features </h2>
+      <ul>
+        <li> Display all cars in the database </li>
+        <li> Display all cars in the database by make </li>
+        <li> Display all cars in the database by model </li>
+        <li> Display all cars in the database by year </li>
+        <li> Display all cars in the database by price </li>
+        <li> Search any dashboard table</li>
+      </ul>
   </main>
 </Layout>
 
